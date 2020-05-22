@@ -88,8 +88,6 @@ class CategoriesActivity : AppCompatActivity() {
         val intent = Intent(this, RecipesActivity::class.java)
         intent.putExtra(CATEGORY_KEY,category)
         startActivity(intent)
-
-        Toast.makeText(this, category, Toast.LENGTH_SHORT).show()
     }
 
     private fun initDagger() {
