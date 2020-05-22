@@ -37,8 +37,8 @@ class CategoriesAdapter(
 
     class CategoryHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        private val categoryName = itemView.tv_category_name
-        private val categoryImage = itemView.img_category
+        private val categoryName = itemView.tv_meal_name
+        private val categoryImage = itemView.img_recipe
 
         fun bind(
             category: Category,

@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.categories.CategoriesActivity">
-
+    tools:context=".ui.recipes.RecipesActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_categories"
+        android:id="@+id/rv_recipes"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,16 +16,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <include
-        android:id="@+id/error_container_categories"
+        android:id="@+id/error_container_recipes"
         layout="@layout/error"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone" />
 
     <include
-        android:id="@+id/progress_container_categories"
+        android:id="@+id/progress_container_recipes"
         layout="@layout/progress_bar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

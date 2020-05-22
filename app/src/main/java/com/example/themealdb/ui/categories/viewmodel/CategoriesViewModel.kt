@@ -10,6 +10,7 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
 class CategoriesViewModel(private val categoryRepository: CategoryRepository) : ViewModel() {
+
     private val compositeDisposable = CompositeDisposable()
     private val _categoryObservable = MutableLiveData<CategoryState>()
     val categoryObservable: LiveData<CategoryState>

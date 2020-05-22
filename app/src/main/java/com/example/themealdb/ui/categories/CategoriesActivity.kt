@@ -1,5 +1,6 @@
 package com.example.themealdb.ui.categories
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -13,6 +14,7 @@ import com.example.themealdb.di.categories.DaggerCategoriesComponent
 import com.example.themealdb.model.categories.Category
 import com.example.themealdb.ui.categories.adapter.CategoriesAdapter
 import com.example.themealdb.ui.categories.viewmodel.CategoriesViewModel
+import com.example.themealdb.ui.recipes.RecipesActivity
 import kotlinx.android.synthetic.main.activity_categories.*
 import kotlinx.android.synthetic.main.error.*
 import javax.inject.Inject
@@ -61,8 +63,8 @@ class CategoriesActivity : AppCompatActivity() {
     }
 
     private fun handleSuccess(categories: List<Category>) {
-        progress_container.visibility = View.GONE
-        error_container.visibility = View.GONE
+        progress_container_categories.visibility = View.GONE
+        error_container_categories.visibility = View.GONE
         rv_categories.visibility = View.VISIBLE
 
         categoriesAdapter.setCategoriesData(categories.toMutableList())
@@ -70,18 +72,22 @@ class CategoriesActivity : AppCompatActivity() {
 
     private fun showProgress() {
         rv_categories.visibility = View.GONE
-        error_container.visibility = View.GONE
-        progress_container.visibility = View.VISIBLE
+        error_container_categories.visibility = View.GONE
+        progress_container_categories.visibility = View.VISIBLE
     }
 
     private fun handleError() {
-        progress_container.visibility = View.GONE
+        progress_container_categories.visibility = View.GONE
         rv_categories.visibility = View.GONE
-        error_container.visibility = View.VISIBLE
+        error_container_categories.visibility = View.VISIBLE
 
     }
 
     private fun handleClicks(category: String) {
+
+        val intent = Intent(this, RecipesActivity::class.java)
+        intent.putExtra(CATEGORY_KEY,category)
+        startActivity(intent)
 
         Toast.makeText(this, category, Toast.LENGTH_SHORT).show()
     }
@@ -91,5 +97,9 @@ class CategoriesActivity : AppCompatActivity() {
             .categoriesModule(
                 CategoriesModule(this)
             ).build().inject(this)
+    }
+
+    companion object {
+    const val CATEGORY_KEY = "category"
     }
 }

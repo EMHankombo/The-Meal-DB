@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="category_margin_start">32dp</dimen>
+    <dimen name="card_margin_start">32dp</dimen>
     <dimen name="card_margin_bottom">8dp</dimen>
     <dimen name="category_name_margin_start">16dp</dimen>
-    <dimen name="category_margin_top">8dp</dimen>
+    <dimen name="card_margin_top">8dp</dimen>
     <dimen name="error_message_size">32sp</dimen>
     <dimen name="card_img_width">120dp</dimen>
     <dimen name="card_img_height">120dp</dimen>
