@@ -8,4 +8,7 @@
     <dimen name="card_img_width">120dp</dimen>
     <dimen name="card_img_height">120dp</dimen>
     <dimen name="card_margin_end">16dp</dimen>
+    <dimen name="card_view_margin_start">8dp</dimen>
+    <dimen name="card_view_margin_end">8dp</dimen>
+    <dimen name="card_view_corner_radius">16dp</dimen>
 </resources>

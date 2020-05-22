@@ -4,7 +4,6 @@ import com.example.themealdb.common.BASE_URL
 import com.example.themealdb.network.RestClient
 import dagger.Module
 import dagger.Provides
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
