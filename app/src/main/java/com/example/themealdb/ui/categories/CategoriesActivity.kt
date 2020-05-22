@@ -35,7 +35,6 @@ class CategoriesActivity : AppCompatActivity() {
 
         setupObservers()
 
-
         setupRecyclerView()
 
         btn_retry.setOnClickListener {
@@ -43,14 +42,6 @@ class CategoriesActivity : AppCompatActivity() {
         }
     }
 
-    private fun setupRecyclerView() {
-        categoriesAdapter =
-            CategoriesAdapter(mutableListOf()) { category: String -> handleClicks(category) }
-        rv_categories.apply {
-            layoutManager = LinearLayoutManager(this@CategoriesActivity)
-            adapter = categoriesAdapter
-        }
-    }
 
     private fun setupObservers() {
         categoriesViewModel.categoryObservable.observe(this, Observer {
@@ -83,10 +74,19 @@ class CategoriesActivity : AppCompatActivity() {
 
     }
 
+    private fun setupRecyclerView() {
+        categoriesAdapter =
+            CategoriesAdapter(mutableListOf()) { category: String -> handleClicks(category) }
+        rv_categories.apply {
+            layoutManager = LinearLayoutManager(this@CategoriesActivity)
+            adapter = categoriesAdapter
+        }
+    }
+
     private fun handleClicks(category: String) {
 
         val intent = Intent(this, RecipesActivity::class.java)
-        intent.putExtra(CATEGORY_KEY,category)
+        intent.putExtra(CATEGORY_KEY, category)
         startActivity(intent)
     }
 
@@ -98,6 +98,6 @@ class CategoriesActivity : AppCompatActivity() {
     }
 
     companion object {
-    const val CATEGORY_KEY = "category"
+        const val CATEGORY_KEY = "category"
     }
 }
